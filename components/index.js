@@ -1,13 +1,56 @@
-import '@tmkelly28/tk-css'
-import './index.css'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { Stage, Layer, Rect, Text } from 'react-konva'
+import Konva from 'konva'
 
-import React from 'react'
-import ReactDOM from 'react-dom'
+class ColoredRect extends React.Component {
+  state = {
+    color: 'green'
+  }
+  handleClick = () => {
+    this.setState({
+      color: Konva.Util.getRandomColor()
+    })
+  }
 
-ReactDOM.render(
-  <div id='demo' className='bg-blue column center-xy fill-xy'>
-    <h1>Ready to React</h1>
-    <div>(⌐■_■)</div>
-  </div>,
-  document.getElementById('app')
-)
+  handleMouseEnter = () => {
+    document.body.style.cursor = 'pointer'
+  }
+
+  handleMouseExit = () => {
+    document.body.style.cursor = 'auto'
+  }
+
+  render() {
+    return (
+      <Rect
+        text="Hello World"
+        x={20}
+        y={20}
+        width={50}
+        height={50}
+        fill={this.state.color}
+        shadowBlur={5}
+        draggable={true}
+        onClick={this.handleClick}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseExit}
+      />
+    )
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Layer>
+          <Text text="Try click on rect" />
+          <ColoredRect />
+        </Layer>
+      </Stage>
+    )
+  }
+}
+
+render(<App />, document.getElementById('app'))

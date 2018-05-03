@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "@tmkelly28/tk-css": "^1.0.2",
+    "konva": "^2.0.3",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-konva": "^1.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
