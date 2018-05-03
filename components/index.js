@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Stage, Layer, Rect, Text } from 'react-konva'
+import { Stage, Layer, Rect, Text, Arrow, Group } from 'react-konva'
 import Konva from 'konva'
 
 class ColoredRect extends React.Component {
@@ -23,6 +23,7 @@ class ColoredRect extends React.Component {
 
   render() {
     return (
+<Group>
       <Rect
         text="Hello World"
         x={20}
@@ -36,6 +37,20 @@ class ColoredRect extends React.Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseExit}
       />
+      <Arrow x={20}
+      y={20}
+      width={150}
+      strokeWidth={3}
+      points={[0,0,500,500]}
+      pointerWidth={50}
+      pointerLength={50}
+      height={50}
+      fill={this.state.color}
+      shadowBlur={5}
+      stroke='black'
+      fill='black'
+      draggable={true} />
+</Group>
     )
   }
 }
