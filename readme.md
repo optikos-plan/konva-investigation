@@ -1,6 +1,6 @@
 Investigate the feasibility of using react-konva.
 
-| TASK                                    | RESULT                 |
+| REQUIREMENT                             | RESULT                 |
 | --------------------------------------- | ---------------------- |
 | Display rectangle                       | yes                    |
 | Editable text inputs                    | see workarounds below  |
@@ -8,7 +8,7 @@ Investigate the feasibility of using react-konva.
 | Arrows need to be grouped with shapes   | yes                    |
 
 
-Challege:
+Challenge:
   Konva renders graphic primitives to the HTML5 canvas. Options to display
   html components like 	`textarea`
 
