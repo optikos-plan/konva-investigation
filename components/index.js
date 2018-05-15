@@ -3,6 +3,18 @@ import { render } from 'react-dom'
 import { Stage, Layer, Rect, Text, Arrow, Group } from 'react-konva'
 import Konva from 'konva'
 
+const Silly = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+    <foreignObject width="100%" height="100%">
+      <div>
+        <span>project Name</span>
+        <span> :due: 01-05-19 </span>
+        <span> :in progress</span>
+      </div>
+    </foreignObject>
+  </svg>
+)
+
 class ColoredRect extends React.Component {
   state = {
     color: 'green'
@@ -23,34 +35,36 @@ class ColoredRect extends React.Component {
 
   render() {
     return (
-<Group>
-      <Rect
-        text="Hello World"
-        x={20}
-        y={20}
-        width={50}
-        height={50}
-        fill={this.state.color}
-        shadowBlur={5}
-        draggable={true}
-        onClick={this.handleClick}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseExit}
-      />
-      <Arrow x={20}
-      y={20}
-      width={150}
-      strokeWidth={3}
-      points={[0,0,500,500]}
-      pointerWidth={50}
-      pointerLength={50}
-      height={50}
-      fill={this.state.color}
-      shadowBlur={5}
-      stroke='black'
-      fill='black'
-      draggable={true} />
-</Group>
+      <Group>
+        <Rect
+          text="Hello World"
+          x={20}
+          y={20}
+          width={50}
+          height={50}
+          fill={this.state.color}
+          shadowBlur={5}
+          draggable={true}
+          onClick={this.handleClick}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseExit}
+        />
+        <Arrow
+          x={20}
+          y={20}
+          width={150}
+          strokeWidth={3}
+          points={[0, 0, 500, 500]}
+          pointerWidth={50}
+          pointerLength={50}
+          height={50}
+          fill={this.state.color}
+          shadowBlur={5}
+          stroke="black"
+          fill="black"
+          draggable={true}
+        />
+      </Group>
     )
   }
 }
